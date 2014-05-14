@@ -98,7 +98,7 @@ void ofxSimpleTimer::stop( )
    
 }
 void ofxSimpleTimer::togglePause(){
-	cout << "is timer running? " << bIsRunning << ":" << bIsPaused << endl;
+	ofLogVerbose() << "ofxSimpleTimer: is timer running? " << bIsRunning << ":" << bIsPaused ;
 	if (bIsRunning)
 		bIsPaused = !bIsPaused;
 
@@ -111,8 +111,8 @@ void ofxSimpleTimer::togglePause(){
 	if (!bIsPaused)
 		startTimeMillis = ofGetElapsedTimeMillis() - pauseTimeOffset;
 
-	cout << "is timer running? " << bIsRunning << ":" << bIsPaused << endl;
-	cout << "timing: " << ofGetElapsedTimeMillis() << ":" << startTimeMillis << endl;
+	ofLogVerbose() << "ofxSimpleTimer: is timer running? " << bIsRunning << ":" << bIsPaused;
+	ofLogVerbose() << "ofxSimpleTimer: timing: " << ofGetElapsedTimeMillis() << ":" << startTimeMillis;
 }
 
 float ofxSimpleTimer::getNormalizedProgress ( )  
